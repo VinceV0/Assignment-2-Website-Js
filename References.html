@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Assignment 2 Professional Practice-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Showcase</title>
+    <link rel="stylesheet" href="CSS/mystyle.css" type="text/css">
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+<!--Header contains logo and title-->
+<header id="header" class="header">
+    <div class="flexbox wrapper" style="margin-top: -10px; margin-right: -8px; margin-left: -8px;">
+        <h1 style="font-family: Verdana;font-size:3vw; color: white;">Javascript <br> Showcase</h1>
+        <img src="Images/Header.png" alt="Javascript Header Image"/>
+    </div>
+</header>
+<!--Header ends here-->
+<!--Body starts here-->
+<body>
+</div> 
+<!--Navigation starts here-->
+<!--Links to parts of website-->
+<div class="nav" id="nav">
+<div style="text-align: center; background-color: #0077b6; font-family: 'Source Sans Pro', sans-serif; font-size: 2vw;">
+    <a class = "nav" href="Page 1 - Vince.html" style="color: white;">Vince | </a> 
+    <a class = "nav" href="Page 2 - Tonicha.html" style="color: white;">| Tonicha | </a> 
+    <a class = "nav" href="Page 3 - Andrew.html" style="color: white">| Andrew</a>
+</div>
+</div>
+<!--Js to make nav scroll with page-->
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var nav = document.getElementById("nav");
+    var sticky = nav.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        nav.classList.add("sticky");
+      } else {
+        nav.classList.remove("sticky");
+      }
+    }
+</script>
+
+<!--Navigation ends here-->
+
+<!--Sidebar navigation, scrolls you to section on current page-->
+<div class="container">
+    <nav>
+        <ul>
+            <li class = "link"><a href="#Section1" style="color: white">Section 1</a></li>
+            <li class = "link"><a href="#Section2" style="color: white">Section 2</a></li>
+            <li class = "link"><a href="#Section3" style="color: white">Section 3</a></li>
+            <li class = "link"><a href="#Section4" style="color: white">Section 4</a></li>
+            <li class = "link"><a href="#Section5" style="color: white">Section 5</a></li>
+        </ul>
+    </nav>
+</div>
+<!--Start of flexboxes to divide webpage-->
+
+<!--Each section follows the same uniformity: image on left, heading on right, text on Right below heading-->
+  <div class="flexbox">
+    <!--Header is centred with a large font size-->
+    <div id="" style="font-size:1.5vw;text-align:left;">
+        <!--YOUR CONTENT GOES HERE-->
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</body>
+<!--Link to scroll you back to top of page-->
+<div style="text-align: center;">
+<a style="color:#000000;" href="#header">Back to top</a>
+<br><br><br>
+<!--Footer that travels with you at the bottom of page-->
+<footer>
+  <!--References links to my research and planning document-->
+  <span style="float: left;"><a href="References.html" style="color: #ffffff;">References</a></span>
+  <!--Copyrighted by me-->
+  <span style="float: right; margin-right:25px;">© Andrew Stevens-Bennett, Tonicha Alves, Vince Vagay | 2022</span>
+</footer>
+
+</html>

@@ -1,0 +1,177 @@
+/*Smooth scrolling*/
+html {
+    scroll-behavior: smooth;
+  }
+  /*Blue background colour with 'Rubik' font*/
+  body{
+    background-color: #00B4D8;
+    font-family: 'Rubik', sans-serif;
+  }
+  /*Headers are centered with a font size and font of Source Sans Pro*/
+  h2{
+    text-align: center;
+    font-size: 5vw;
+    margin-top: 1px;
+    margin-bottom: -3px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  /*Subheaders are aligned left with a font size and font of Source Sans Pro*/
+  h3{
+    text-align: left;
+    font-size: 2.5vw;
+    margin-top: 1px;
+    margin-bottom: -3px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  /*Audios are a certain dimension*/
+  audio{
+    height: 4vw;
+    width: 70%;
+  }
+  /*Flexboxes are used to divide the whole page, rounded corners*/
+  .flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #0077b6;
+    border-radius: 10px 10px 10px 10px;
+    height: 100%;
+    margin-top: 20px;
+    text-align: center;
+    z-index: 2;
+  }
+  /*Divisions in flexboxes have chosen elements*/
+  .flexbox > div {
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    width: 98%;
+    height: 98%;
+    margin: 4%;
+    text-align: left;
+    font-size: 120%;
+    border-radius: 10px 10px 10px 10px;
+    flex-wrap: wrap;
+    display: flow-root;
+    font-family: 'Rubik', sans-serif;
+    padding-bottom: 10px;
+  }
+  /*Images in flexboxes are always on the left and have a background color of white, incase the image is transparent*/
+  .flexbox > img {
+    float: left;
+    max-height: 100%;
+    min-width: 100%;
+    vertical-align: bottom;
+    background-color: white;
+    z-index: 0;
+  }
+  /*Defines headers over image in flexbox*/
+  .flexbox > h1{
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center; 
+    position: absolute;  
+    left: 50%;
+    margin-top: 10vw;
+    transform: translate(-50%, -50%);
+    z-index: 1;    
+  }
+  /*Nav bar is given chosen elements*/
+    .nav { /*Navigation bar links to different parts of page*/
+    margin-bottom: -10px;
+    margin-left: -8px;
+    position:relative;
+    width: 100.9%;
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    z-index: 0;
+  }
+  
+  /*Makes nav bar stick to top one scroll*/
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Navigation Links */
+  a.nav{font-weight: bold;}
+  a.nav:link{color:#ffffff;} /*White*/
+  a.nav:visited{color:#ffffff;} /*White*/
+  a.nav:hover{color:#57b3ed;} /* Light Blue */
+  a.nav:active{color:#57b3ed;} /* Light Blue */
+  /*Footer is given colour and is fixed to the bottom of the page*/
+  footer {
+    padding: 3px;
+    padding-left: 10px;
+    padding-top:10px;
+    margin-left: -10px;
+    height: 4%;
+    width: 100.9%;
+    background-color: #0077b6;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    font-size: 1vw;
+    z-index: 100;
+  }
+/*Contains sidebar*/
+  .container{
+    width:25px;
+    background:rgba(0, 0, 0, 0.65);
+    position: fixed;
+    padding:0px 0px 0px 0px;
+    margin-top: -200px;
+    margin-left: -10px;
+    border:1px solid #111;
+    /* Makes left side corners sharp, right side corners rounded*/
+    border-radius: 0px 10px 10px 0px;
+    box-shadow:0px 4px 5px rgba(0, 0, 0, 0.75);
+    /* 2  seconds for window to pop out*/
+    transition: width 2s;
+    z-index: 100;
+ }
+ /*Increases width on user hover*/
+ .container:hover{
+     width: 225px;
+ }
+ /*Any links*/
+ .link{
+    font-size:16px;
+    font-weight:300;
+    text-align:left;
+    position:relative;
+    height:40px;
+    line-height:40px;
+    margin-top:10px;
+    padding-bottom: 5px;
+    overflow:hidden;
+    width:90%;
+    margin-left:5%;
+    cursor:pointer;
+ }
+ .link:after{
+    content: '';
+    position:absolute;
+    width:80%;
+    border-bottom:1px solid rgba(255, 255, 255, 0.5);
+    bottom:50%;
+    left:-100%;
+    transition-delay: all 0.5s;
+    transition: all 0.5s;
+ }
+ .link:hover:after,
+ .link.hover:after{
+    left:100%;
+ }
+ .link .text{
+    text-shadow:0px -40px 0px rgba(255, 255, 255, 1);
+    transition:all 0.75s;
+    transform:translateY(100%) translateZ(0);
+    transition-delay:all 0.25s;
+    color:white;
+ }
+ .link:hover .text,
+ .link.hover .text{
+    text-shadow:0px -40px 0px rgba(255, 255, 255, 0);
+    transform:translateY(0%) translateZ(0) scale(1.1);
+    font-weight:600;
+ }
