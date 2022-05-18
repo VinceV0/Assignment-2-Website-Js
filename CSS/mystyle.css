@@ -1,10 +1,10 @@
-/*Smooth scrolling*/
-html {
+  /*Smooth scrolling*/
+  html {
     scroll-behavior: smooth;
   }
   /*Blue background colour with 'Rubik' font*/
   body{
-    background-color: #00B4D8;
+    background-color: #95834C;
     font-family: 'Rubik', sans-serif;
   }
   /*Headers are centered with a font size and font of Source Sans Pro*/
@@ -32,9 +32,11 @@ html {
   .flexbox {
     display: flex;
     flex-wrap: wrap;
-    background-color: #0077b6;
+    background-color: #0f172a;
     border-radius: 10px 10px 10px 10px;
     height: 100%;
+    width: 80%;
+    margin-left: 10%;
     margin-top: 20px;
     text-align: center;
     z-index: 2;
@@ -76,6 +78,7 @@ html {
   }
   /*Nav bar is given chosen elements*/
     .nav { /*Navigation bar links to different parts of page*/
+    margin-top: -5px;
     margin-bottom: -10px;
     margin-left: -8px;
     position:relative;
@@ -93,20 +96,21 @@ html {
   }
 
   /* Navigation Links */
-  a.nav{font-weight: bold;}
-  a.nav:link{color:#ffffff;} /*White*/
-  a.nav:visited{color:#ffffff;} /*White*/
-  a.nav:hover{color:#57b3ed;} /* Light Blue */
-  a.nav:active{color:#57b3ed;} /* Light Blue */
+  a.nav{font-weight: bold;text-decoration: none;}
+  a.nav:link{color:#ffffff;text-decoration: none;} /*White*/
+  a.nav:visited{color:#ffffff;text-decoration: none;} /*White*/
+  a.nav:hover{color:#95834C;text-decoration: none;} /* Light Blue */
+  a.nav:active{color:#95834C;text-decoration: none;} /* Light Blue */
   /*Footer is given colour and is fixed to the bottom of the page*/
   footer {
+    font-family: 'Roboto', sans-serif;
     padding: 3px;
     padding-left: 10px;
     padding-top:10px;
     margin-left: -10px;
     height: 4%;
     width: 100.9%;
-    background-color: #0077b6;
+    background-color: #0f172a;
     color: white;
     position: fixed;
     bottom: 0;
@@ -137,6 +141,7 @@ html {
  .link{
     font-size:16px;
     font-weight:300;
+    font-family: 'Roboto', sans-serif;
     text-align:left;
     position:relative;
     height:40px;
