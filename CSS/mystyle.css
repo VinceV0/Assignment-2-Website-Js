@@ -1,3 +1,6 @@
+  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik&family=Source+Sans+Pro&display=swap');
+
   /*Smooth scrolling*/
   html {
     scroll-behavior: smooth;
@@ -85,7 +88,7 @@
     width: 100.9%;
     text-align: center;
     text-shadow: 1px 1px 2px black;
-    z-index: 0;
+    z-index: 100;
   }
   
   /*Makes nav bar stick to top one scroll*/
@@ -123,14 +126,14 @@
     background:rgba(0, 0, 0, 0.65);
     position: fixed;
     padding:0px 0px 0px 0px;
-    margin-top: -200px;
+    margin-top: -240px;
     margin-left: -10px;
     border:1px solid #111;
     /* Makes left side corners sharp, right side corners rounded*/
     border-radius: 0px 10px 10px 0px;
     box-shadow:0px 4px 5px rgba(0, 0, 0, 0.75);
     /* 2  seconds for window to pop out*/
-    transition: width 2s;
+    transition: width 1s;
     z-index: 100;
  }
  /*Increases width on user hover*/

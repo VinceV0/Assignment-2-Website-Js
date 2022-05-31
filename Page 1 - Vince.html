@@ -10,8 +10,34 @@
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+<style>
+  .flexbox > img{
+    all:unset;
+    border-radius: 15px;
+    width: 70%;
+  }
+  p{
+    font-size: 1.6vw;
+    text-align: left;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  .Vbtn{
+      width: 100%;
+      height: 3.5vw;
+      border: 1px solid white;
+      border-radius: 15px;
+      background: #0f172a;
+      color: white;
+      cursor: pointer;
+      outline: none;
+  }
+  .stopwatch{
+    font-size:5vw;
+  }
+</style>
 
 <!--Header contains logo and title-->
 <header id="header" class="header">
@@ -48,18 +74,143 @@
       }
     }
 </script>
+<script>
+//Declare Variables
 
-<!--Navigation ends here-->
+//Sets timer variable to the specified ID in the HTML document
+let timer = document.getElementById('stopwatch');
+
+//Declaring variables such as hours, minutes, seconds and milliseconds
+let hr = 0;
+let min = 0;
+let sec = 0;
+let ms = 0;
+//Boolean variable to keep track of if the timer is active or not
+let stoptime = true;
+
+//Function that starts the timer
+function startTimer() {
+  //If the timer is stopped, start the timer and call the timer function
+  if (stoptime == true) {
+        stoptime = false;
+        timerCycle();
+    }
+}
+//Function that stops the timer
+function stopTimer() {
+  //If the timer is going, stop it
+  if (stoptime == false) {
+    stoptime = true;
+  }
+}
+//Function that resets the timer
+function resetTimer() {
+    //Targets the stopwatch id in the HTML
+    const stopwatch = document.getElementById("stopwatch");
+    //Sets the text to display all zeros
+    stopwatch.innerHTML = '00:00:00.00';
+    //Sets boolean variable to say that the timer is stopped
+    stoptime = true;
+    //Resets all counting variables
+    hr = 0;
+    sec = 0;
+    min = 0;
+    ms = 0;
+}
+
+//Function that is the timer
+function timerCycle() {
+    //If the timer is going refresh the variables
+    //It parses/converts the current timer into the variables
+    if (stoptime == false) {
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+
+    //Increment the ms variable by 1
+    ms += 1;
+    
+    //Once the milliseconds variable hits 100,
+    //Add 1 to the seconds variable
+    //Resets milliseconds variable
+    if(ms == 100){
+      sec += 1;
+      ms = 0;
+    }
+    //Once the seconds variable hits 60,
+    //Add 1 to the minutes variable
+    //Resets seconds and milliseconds variable
+    if (sec == 60) {
+      min += 1;
+      sec = 0;
+      ms = 0;
+    }
+    //Once the minutes variable hits 60,
+    //Add 1 to the hours variable
+    //Resets minutes, seconds and milliseconds variable
+    if (min == 60) {
+      hr += 1;
+      min = 0;
+      sec = 0;
+      ms = 0;
+    }
+    
+    //For visuals, adds a 0 to the start of the variable if it's below 10
+    if (sec < 10 || sec == 0) {
+      sec = '0' + sec;
+    }
+    if (min < 10 || min == 0) {
+      min = '0' + min;
+    }
+    if (hr < 10 || hr == 0) {
+      hr = '0' + hr;
+    }
+
+    //timer variable displays new time
+    timer = hr + ':' + min + ':' + sec + '.' + ms;
+    //This makes this function sleep for a set amount if time
+    setTimeout("timerCycle()", 10);
+
+    //Refreshes the stopwatch to display the new time
+    const stopwatch = document.getElementById("stopwatch");
+    stopwatch.innerHTML = timer;
+
+    //This function repeats very quickly
+  }
+}
+</script>
+<script>
+/*Function to test features*/
+function test(){
+  if (value1 == 1) {
+    value2 = 1;
+  //If value1 is 1 value2 will become 1
+  //Continues if it is false
+  }else if(value1 == 2) {
+    value2 = 2;
+  //If value1 is 2 then value2 becomes 2
+  //Continues if it is false
+  }
+  else{
+    value2 = 3;
+  //If none of the conditions are met, value2 becomes 3
+  }
+}
+</script>
 
 <!--Sidebar navigation, scrolls you to section on current page-->
 <div class="container">
     <nav>
         <ul>
-            <li class = "link"><a href="#Section1" style="color: white">Section 1</a></li>
-            <li class = "link"><a href="#Section2" style="color: white">Section 2</a></li>
-            <li class = "link"><a href="#Section3" style="color: white">Section 3</a></li>
-            <li class = "link"><a href="#Section4" style="color: white">Section 4</a></li>
-            <li class = "link"><a href="#Section5" style="color: white">Section 5</a></li>
+            <li class = "link"><a href="#Variables" style="color: white">Variables</a></li>
+            <li class = "link"><a href="#GetId" style="color: white">Get Element by ID</a></li>
+            <li class = "link"><a href="#InnerHTML" style="color: white">Inner HTML</a></li>
+            <li class = "link"><a href="#Functions" style="color: white">Functions</a></li>
+            <li class = "link"><a href="#Button" style="color: white">Button</a></li>
+            <li class = "link"><a href="#Operators" style="color: white">Operators</a></li>
+            <li class = "link"><a href="#Conditional" style="color: white">Conditional Statements</a></li>
+            <li class = "link"><a href="#Comparison" style="color: white">Comparison Operators</a></li>
+            <li class = "link"><a href="#Stopwatch" style="color: white">Stopwatch</a></li>
         </ul>
     </nav>
 </div>
@@ -67,22 +218,103 @@
 
 <!--Each section follows the same uniformity: image on left, heading on right, text on Right below heading-->
   <div class="flexbox">
-    <!--Header is centred with a large font size-->
-    <div id="" style="font-size:1.5vw;text-align:left;">
-        <!--YOUR CONTENT GOES HERE-->
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="flexbox" style="text-align: center;">
+      <h1 style="font-size: 5vw">JavaScript Tutorial</h1>
+      <br><br><br><br><br><br><br><br><br><br><br>
+      <!--Reference https://www.w3schools.com/js/js_variables.asp-->
+      <img id="Variables" src="Images/Vince/JavaScript Variables.png">
+      <h4>Variables</h4>
+      <p>Variables are containers for storing data<br>
+        <br>In JavaScript you can declare variables in 3 ways
+        <br>Declaring a variable using 'var' will store data
+        <br>'var' is more widely compatible with older browsers
+        <br>
+        <br>If you want to be more specific
+        <br>Declaring a variable using 'const' stores data and <u>never</u> changes
+        <br>Declaring a variable using 'let' stores data and <u>can</u> change
+      </p>
+      <img id="GetId" src="Images/Vince/JavaScript Get Element by ID.png">
+      <h4>Get Element by ID</h4>
+      <p>This will return the element that matches the specified ID in the HTML document
+      </p>
+      <!--Reference https://www.w3schools.com/jsref/prop_html_innerhtml.asp-->
+      <img id="InnerHTML" src="Images/Vince/JavaScript Inner HTML.png">
+      <h4>Inner HTML</h4>
+      <p>Sets or returns the HTML content (inner HTML) of an element.</p>
+      <img id="Functions" src="Images/Vince/JavaScript Functions.png">
+      <h4>Functions</h4>
+      <p>
+        This is how you declare a function called "startTimer"
+      </p>
+      <img id="Button"src="Images/Vince/HTML Button Start.png">
+      <h4>Button</h4>
+      <p>We have created a button element in HTML labeled "Start"
+        <br>When clicked it will call the function "startTimer" in JavaScript
+      </p>
+      <!--Reference https://www.w3schools.com/js/js_operators.asp-->
+      <img id="Operators"src="Images/Vince/JavaScript Arithmetic_Assignment Operators.png">
+      <!--	
+  Arithmetic
+x + y		Addition
+x - y		Subtraction
+x * y		Multiplication
+x ** y		Multiplication
+x / y		Division
+x % y		Modulus
+x ++		Increment
+x --		Decrement
+	Assignment
+x = y		Assign
+x += y		Increment by y
+x -= y		Decrement by y
+x *= y		Multiply by y
+x /= y		Divide by y
+x %= y		Modulus of x by y
+x **= y		x to the power of y
+        -->
+      <h4>Operators</h4>
+      <p>Used for changing the value of a variable</p>
+      <img id="Conditional"src="Images/Vince/JavaScript Conditional Statements.png">
+      <h4>Conditional Statements</h4>
+      <p>The JavaScript syntax gets its inspiration from Java and C++</p>
+      <img id="Comparison" src="Images/Vince/JavaScript Comparison Operators.png">
+      <!--
+==			equal to
+===			equal value and equal type
+!=			not equal
+!==			not equal value or not equal type
+>			greater than
+<			less than
+>=			greater than or equal to
+<=			less than or equal to
+      -->
+      <h4>Comparison Operators</h4>
+      <p>Use comparison operators in conjunction with conditional statements</p>
+  </div>
 
 
-
-
-
-
-
-
-
-
-
-
+  <!--Header is centred with a large font size-->
+  <div id="Stopwatch" style="padding-left: 31%; font-size:1.5vw;text-align:left; margin-top: -0.5%;">
+    <!--Reference https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak-->
+    <h2 style="margin-left: -55%;">Stopwatch</h2>
+    <div class="stopwatch" style="margin-left: -8%;" id="stopwatch">
+      00:00:00.00
+    </div>
+    <div style="margin-left: -3%; padding-right: 50%">
+      <button class="Vbtn" onclick="startTimer()">Start</button>
+      <button class="Vbtn" onclick="stopTimer()">Stop</button>
+      <button class="Vbtn" onclick="resetTimer()">Reset</button>
+    </div>
+    <br>
+    <br>
+    <a href="https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak" style="text-decoration: none; color: black;">
+      <h1 style="text-decoration: none; padding-left: 4%;">How it's done</h1></a>
+  </div>
+    <div style="margin-top: -6%;">
+      <a href="https://ray.so/?title=HTML+Buttons&theme=raindrop&spacing=16&background=true&darkMode=true&code=PGJ1dHRvbiBvbmNsaWNrPSJzdGFydFRpbWVyKCkiPlN0YXJ0PC9idXR0b24-CjxidXR0b24gb25jbGljaz0ic3RvcFRpbWVyKCkiPlN0b3A8L2J1dHRvbj4KPGJ1dHRvbiBvbmNsaWNrPSJyZXNldFRpbWVyKCkiPlJlc2V0PC9idXR0b24-&language=javascript" style="display: flex; justify-content: center;">
+      <img src="Images/Vince/HTML Buttons All.png" style="width: 80%;"></a>
+      <a href="https://ray.so/?title=JavaScript+Stopwatch&theme=raindrop&spacing=16&background=true&darkMode=true&code=PHNjcmlwdD4KLy9EZWNsYXJlIFZhcmlhYmxlcwoKLy9TZXRzIHRpbWVyIHZhcmlhYmxlIHRvIHRoZSBzcGVjaWZpZWQgSUQgaW4gdGhlIEhUTUwgZG9jdW1lbnQKbGV0IHRpbWVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N0b3B3YXRjaCcpOwoKLy9EZWNsYXJpbmcgdmFyaWFibGVzIHN1Y2ggYXMgaG91cnMsIG1pbnV0ZXMsIHNlY29uZHMgYW5kIG1pbGxpc2Vjb25kcwpsZXQgaHIgPSAwOwpsZXQgbWluID0gMDsKbGV0IHNlYyA9IDA7CmxldCBtcyA9IDA7Ci8vQm9vbGVhbiB2YXJpYWJsZSB0byBrZWVwIHRyYWNrIG9mIGlmIHRoZSB0aW1lciBpcyBhY3RpdmUgb3Igbm90CmxldCBzdG9wdGltZSA9IHRydWU7CgovL0Z1bmN0aW9uIHRoYXQgc3RhcnRzIHRoZSB0aW1lcgpmdW5jdGlvbiBzdGFydFRpbWVyKCkgewogIC8vSWYgdGhlIHRpbWVyIGlzIHN0b3BwZWQsIHN0YXJ0IHRoZSB0aW1lciBhbmQgY2FsbCB0aGUgdGltZXIgZnVuY3Rpb24KICBpZiAoc3RvcHRpbWUgPT0gdHJ1ZSkgewogICAgICAgIHN0b3B0aW1lID0gZmFsc2U7CiAgICAgICAgdGltZXJDeWNsZSgpOwogICAgfQp9Ci8vRnVuY3Rpb24gdGhhdCBzdG9wcyB0aGUgdGltZXIKZnVuY3Rpb24gc3RvcFRpbWVyKCkgewogIC8vSWYgdGhlIHRpbWVyIGlzIGdvaW5nLCBzdG9wIGl0CiAgaWYgKHN0b3B0aW1lID09IGZhbHNlKSB7CiAgICBzdG9wdGltZSA9IHRydWU7CiAgfQp9Ci8vRnVuY3Rpb24gdGhhdCByZXNldHMgdGhlIHRpbWVyCmZ1bmN0aW9uIHJlc2V0VGltZXIoKSB7CiAgICAvL1RhcmdldHMgdGhlIHN0b3B3YXRjaCBpZCBpbiB0aGUgSFRNTAogICAgY29uc3Qgc3RvcHdhdGNoID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInN0b3B3YXRjaCIpOwogICAgLy9TZXRzIHRoZSB0ZXh0IHRvIGRpc3BsYXkgYWxsIHplcm9zCiAgICBzdG9wd2F0Y2guaW5uZXJIVE1MID0gJzAwOjAwOjAwLjAwJzsKICAgIC8vU2V0cyBib29sZWFuIHZhcmlhYmxlIHRvIHNheSB0aGF0IHRoZSB0aW1lciBpcyBzdG9wcGVkCiAgICBzdG9wdGltZSA9IHRydWU7CiAgICAvL1Jlc2V0cyBhbGwgY291bnRpbmcgdmFyaWFibGVzCiAgICBociA9IDA7CiAgICBzZWMgPSAwOwogICAgbWluID0gMDsKICAgIG1zID0gMDsKfQoKLy9GdW5jdGlvbiB0aGF0IGlzIHRoZSB0aW1lcgpmdW5jdGlvbiB0aW1lckN5Y2xlKCkgewogICAgLy9JZiB0aGUgdGltZXIgaXMgZ29pbmcgcmVmcmVzaCB0aGUgdmFyaWFibGVzCiAgICAvL0l0IHBhcnNlcy9jb252ZXJ0cyB0aGUgY3VycmVudCB0aW1lciBpbnRvIHRoZSB2YXJpYWJsZXMKICAgIGlmIChzdG9wdGltZSA9PSBmYWxzZSkgewogICAgc2VjID0gcGFyc2VJbnQoc2VjKTsKICAgIG1pbiA9IHBhcnNlSW50KG1pbik7CiAgICBociA9IHBhcnNlSW50KGhyKTsKCiAgICAvL0luY3JlbWVudCB0aGUgbXMgdmFyaWFibGUgYnkgMQogICAgbXMgKz0gMTsKICAgIAogICAgLy9PbmNlIHRoZSBtaWxsaXNlY29uZHMgdmFyaWFibGUgaGl0cyAxMDAsCiAgICAvL0FkZCAxIHRvIHRoZSBzZWNvbmRzIHZhcmlhYmxlCiAgICAvL1Jlc2V0cyBtaWxsaXNlY29uZHMgdmFyaWFibGUKICAgIGlmKG1zID09IDEwMCl7CiAgICAgIHNlYyArPSAxOwogICAgICBtcyA9IDA7CiAgICB9CiAgICAvL09uY2UgdGhlIHNlY29uZHMgdmFyaWFibGUgaGl0cyA2MCwKICAgIC8vQWRkIDEgdG8gdGhlIG1pbnV0ZXMgdmFyaWFibGUKICAgIC8vUmVzZXRzIHNlY29uZHMgYW5kIG1pbGxpc2Vjb25kcyB2YXJpYWJsZQogICAgaWYgKHNlYyA9PSA2MCkgewogICAgICBtaW4gKz0gMTsKICAgICAgc2VjID0gMDsKICAgICAgbXMgPSAwOwogICAgfQogICAgLy9PbmNlIHRoZSBtaW51dGVzIHZhcmlhYmxlIGhpdHMgNjAsCiAgICAvL0FkZCAxIHRvIHRoZSBob3VycyB2YXJpYWJsZQogICAgLy9SZXNldHMgbWludXRlcywgc2Vjb25kcyBhbmQgbWlsbGlzZWNvbmRzIHZhcmlhYmxlCiAgICBpZiAobWluID09IDYwKSB7CiAgICAgIGhyICs9IDE7CiAgICAgIG1pbiA9IDA7CiAgICAgIHNlYyA9IDA7CiAgICAgIG1zID0gMDsKICAgIH0KICAgIAogICAgLy9Gb3IgdmlzdWFscywgYWRkcyBhIDAgdG8gdGhlIHN0YXJ0IG9mIHRoZSB2YXJpYWJsZSBpZiBpdCdzIGJlbG93IDEwCiAgICBpZiAoc2VjIDwgMTAgfHwgc2VjID09IDApIHsKICAgICAgc2VjID0gJzAnICsgc2VjOwogICAgfQogICAgaWYgKG1pbiA8IDEwIHx8IG1pbiA9PSAwKSB7CiAgICAgIG1pbiA9ICcwJyArIG1pbjsKICAgIH0KICAgIGlmIChociA8IDEwIHx8IGhyID09IDApIHsKICAgICAgaHIgPSAnMCcgKyBocjsKICAgIH0KCiAgICAvL3RpbWVyIHZhcmlhYmxlIGRpc3BsYXlzIG5ldyB0aW1lCiAgICB0aW1lciA9IGhyICsgJzonICsgbWluICsgJzonICsgc2VjICsgJy4nICsgbXM7CiAgICAvL1RoaXMgbWFrZXMgdGhpcyBmdW5jdGlvbiBzbGVlcCBmb3IgYSBzZXQgYW1vdW50IGlmIHRpbWUKICAgIHNldFRpbWVvdXQoInRpbWVyQ3ljbGUoKSIsIDEwKTsKCiAgICAvL1JlZnJlc2hlcyB0aGUgc3RvcHdhdGNoIHRvIGRpc3BsYXkgdGhlIG5ldyB0aW1lCiAgICBjb25zdCBzdG9wd2F0Y2ggPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgic3RvcHdhdGNoIik7CiAgICBzdG9wd2F0Y2guaW5uZXJIVE1MID0gdGltZXI7CgogICAgLy9UaGlzIGZ1bmN0aW9uIHJlcGVhdHMgdmVyeSBxdWlja2x5CiAgfQp9Cjwvc2NyaXB0Pg&language=javascript" style="display: flex; justify-content: center;">
+      <img src="Images/Vince/JavaScript Stopwatch.png" style="width: 80%;"></a>
     </div>
   </div>
 </body>
@@ -97,5 +329,4 @@
   <!--Copyrighted by us-->
   <span style="float: right; margin-right:25px;">© Andrew Stevens-Bennett, Tonicha Alves, Vince Vagay | 2022</span>
 </footer>
-
 </html>
