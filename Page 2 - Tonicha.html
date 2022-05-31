@@ -12,65 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 <style>
-  /*
-=============== 
-Fonts
-===============
-*/
-
-/*
-=============== 
-Variables
-===============
-*/
-
-:root {
-  /* dark shades of primary color*/
-  --clr-primary-1: hsl(205, 86%, 17%);
-  --clr-primary-2: hsl(205, 77%, 27%);
-  --clr-primary-3: hsl(205, 72%, 37%);
-  --clr-primary-4: hsl(205, 63%, 48%);
-  /* primary/main color */
-  --clr-primary-5: hsl(205, 78%, 60%);
-  /* lighter shades of primary color */
-  --clr-primary-6: hsl(205, 89%, 70%);
-  --clr-primary-7: hsl(205, 90%, 76%);
-  --clr-primary-8: hsl(205, 86%, 81%);
-  --clr-primary-9: hsl(205, 90%, 88%);
-  --clr-primary-10: hsl(205, 100%, 96%);
-  /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
-  /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(206, 33%, 96%);
-  --clr-white: #fff;
-  --clr-red-dark: hsl(360, 67%, 44%);
-  --clr-red-light: hsl(360, 71%, 66%);
-  --clr-green-dark: hsl(125, 67%, 44%);
-  --clr-green-light: hsl(125, 71%, 66%);
-  --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
-  --transition: all 0.3s linear;
-  --spacing: 0.25rem;
-  --radius: 0.5rem;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --max-width: 1170px;
-  --fixed-width: 620px;
-}
-/*
-=============== 
-Global Styles
-===============
-*/
 
 *,
 ::after,
@@ -79,13 +20,7 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
-  color: var(--clr-grey-1);
-  line-height: 1.5;
-  font-size: 0.875rem;
-}
+
 ul {
   list-style-type: none;
 }
@@ -101,11 +36,11 @@ h1,
 h2,
 h3,
 h4 {
-  letter-spacing: var(--spacing);
+  letter-spacing: 0.25rem;
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: var(--ff-primary);
+  font-family: Verdana;
 }
 h1 {
   font-size: 3rem;
@@ -121,7 +56,7 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
+  color: rgb(17, 20, 46);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -149,22 +84,30 @@ p {
 /*  global classes */
 
 .screen {
+   
  height: 50%;
  width: 90%;
+ margin: auto;
  margin-top: 2%;
- border: 5px solid blue;
+ border: 5px solid rgb(25, 50, 50);
  border-radius: 5px;
+ padding: 5px;
  align-content: center;
 }
 
-.screen > center {
+.screen,center {
+    display: relative;
+    justify-content: center;
+    align-items: center;
     height: 200px;
+    padding-bottom: 25%
 }
 
 .tbtn {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
   background: transparent;
+  margin-left: 45%;
   letter-spacing: 0.25rem;
   font-weight: 700;
   transition: 0.3s, linear;
@@ -175,61 +118,25 @@ p {
   border-radius: 50%;
 }
 .tbtn:hover {
-  color: var(--clr-white);
-  background: var(--clr-black);
+  color: whitesmoke;
+  background: black;
 }
 .tbtn-hero {
     justify-content: center;
   font-size: 1rem;
   padding: 0.75rem 1.25rem;
+ 
 }
-/* section */
-.section {
-  padding: 5rem 0;
+.supername {
+ 
+ height: 500px;
+ width: 600px;
+ border: 7px solid black;
+ border-radius: 5px;
+ padding: 5px;
+
 }
 
-.section-center {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: 1170px;
-}
-@media screen and (min-width: 992px) {
-  .section-center {
-    width: 95vw;
-  }
-}
-
-/*
-=============== 
-Container
-===============
-*/
-main {
-  min-height: calc(100vh - 3rem);
-  display: grid;
-  place-items: center;
-}
-.container {
-  text-align: center;
-}
-.container h2 {
-  background: var(--clr-black);
-  color: var(--clr-white);
-  padding: 1rem;
-  border-radius: var(--radius);
-  margin-bottom: 2.5rem;
-}
-.color {
-  color: var(--clr-primary-5);
-}
-
-/* Andrew's css*/
-.appdiv {
-    height: 60%;
-    width: 70%;
-    border: 7px solid black;
-    border-radius: 5px;
-}
 </style>
 <!--Header contains logo and title-->
 <header id="header" class="header">
@@ -247,8 +154,7 @@ main {
 <div class="nav" id="nav">
   <div style="text-align: center; background-color: #0f172a; font-family: 'Roboto'; font-size: 2vw;">
     <a class = "nav" href="Page 1 - Vince.html" style="color: white;">Vince | </a> 
-    <a class = "nav" href="Page 2 - Tonicha.html" style="color: white;">| Tonicha | </a> 
-    <a class = "nav" href="Page 3 - Andrew.html" style="color: white">| Andrew</a>
+    <a class = "nav" href="Page 2 - Tonicha.html" style="color: white;">| Tonicha</a> 
 </div>
 </div>
 <!--Js to make nav scroll with page-->
@@ -266,21 +172,6 @@ main {
       }
     }
 </script>
-
-<!--Navigation ends here-->
-
-<!--Sidebar navigation, scrolls you to section on current page-->
-<div class="container">
-    <nav>
-        <ul>
-            <li class = "link"><a href="#Section1" style="color: white">Section 1</a></li>
-            <li class = "link"><a href="#Section2" style="color: white">Section 2</a></li>
-            <li class = "link"><a href="#Section3" style="color: white">Section 3</a></li>
-            <li class = "link"><a href="#Section4" style="color: white">Section 4</a></li>
-            <li class = "link"><a href="#Section5" style="color: white">Section 5</a></li>
-        </ul>
-    </nav>
-</div>
 <!--Start of flexboxes to divide webpage-->
 
 <!--Each section follows the same uniformity: image on left, heading on right, text on Right below heading-->
@@ -288,28 +179,32 @@ main {
     <!--Header is centred with a large font size-->
     <div id="" style="font-size:1.5vw;text-align:left; display:flex; justify-content: center;">
         <!--YOUR CONTENT GOES HERE-->
-        <div class="screen" >
-          <h2 style="font-size: 5vw">background color : <span class="color">#f1f5f8</span></h2>
-          <br>
-          <div class="center" style="justify-content: center; display: flex;">
-              <!--here we are calling the class t-btn which has the style and then create an ID so the javascript can recognise the element.-->
-              <button class="tbtn tbtn-hero" id="tbtn">click me</button>
-          </div>
-      </div>
-      <br><br><br><br><br><br><br><br><br><br><br><br>
-      <div class="appdiv" style="font-size: 1.5vw;">
-          <div style="margin-left: 30%">
-            
-          <label for="firstInput">Enter your favourite Colour:</label><br>
-          <input type="text" id="firstInput" name="firstInput" style="width: 50%"><br><br>
-  
-          <label for="secondInput">Enter your favourite animal:</label><br>
-          <input type="text" id="secondInput" name="secondInput" style="width: 50%"><br><br>
-  
-          <button type="button" onclick="superheroname()" style="font-size: 1.5vw;">Find out your superhero name</button>
-  
-          <div class="output_screen" id="heroname"></div>
+        
+          <div class="screen">
+            <h2 style="font-size: 5vw; display: flow-root;">background color : <span class="color">#f1f5f8</span></h2>
+            <!--here we are calling the class t-btn which has the style and then create an ID so the javascript can recognise the element.-->
+            <button class="tbtn tbtn-hero" id="tbtn" >click me</button>
+            <br>
         </div>
+     
+    
+    
+        <br>
+        <div class="supername" style="font-size: 1.5vw;">
+          <div>
+          <label for="firstInput">Enter your favourite Colour:</label><br>
+          <input type="text" id="firstInput" name="firstInput"><br><br>
+    
+            <label for="secondInput">Enter your favourite animal:</label><br>
+            <input type="text" id="secondInput" name="secondInput"><br><br>
+    
+            <button class="tbtn-hero" type="button" onclick="superheroname()"style="font-size: 1.5vw;">Your superhero name</button>
+    
+            <div class="output_screen" id="heroname"></div>
+
+            </div>
+          </div>
+        
       </div>
     </div>
   </div>
@@ -328,7 +223,7 @@ main {
   <!--References links to our research and planning document-->
   <span style="float: left;"><a href="References.html" style="color: #ffffff;">References</a></span>
   <!--Copyrighted by us-->
-  <span style="float: right; margin-right:25px;">© Andrew Stevens-Bennett, Tonicha Alves, Vince Vagay | 2022</span>
+  <span style="float: right; margin-right:25px;">© Tonicha Alves, Vince Vagay | 2022</span>
 </footer>
 
 </html>
