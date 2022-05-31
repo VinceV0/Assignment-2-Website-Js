@@ -37,6 +37,12 @@
   .stopwatch{
     font-size:5vw;
   }
+  .counter{
+    font-size:5vw;
+    display: flex;
+    justify-content: center;
+    padding-left: 8%;
+  }
 </style>
 
 <!--Header contains logo and title-->
@@ -168,7 +174,7 @@ function timerCycle() {
 
     //timer variable displays new time
     timer = hr + ':' + min + ':' + sec + '.' + ms;
-    //This makes this function sleep for a set amount if time
+    //This makes this function sleep for a set amount of time
     setTimeout("timerCycle()", 10);
 
     //Refreshes the stopwatch to display the new time
@@ -178,6 +184,41 @@ function timerCycle() {
     //This function repeats very quickly
   }
 }
+</script>
+<script>
+//Declare variables
+let count = 0;
+//Function that adds one to the counter
+  function add(){
+    //Converts the current count to integer
+    count = parseInt(count);
+    //Adds one to the count
+    count += 1;
+    //Updates count in the HTML page
+    counter.innerHTML = count;
+  }
+//Function that subtracts one from the counter
+//Only if the counter is more than 1
+  function sub(){
+    //Converts the current count to integer
+    count = parseInt(count);
+    //If the count is more than 0
+    if(count > 0){
+      //Subtract one from the count
+      count -= 1;
+    }
+    //Updates count in the HTML page
+    counter.innerHTML = count;
+  }
+//Function that resets the counter to 0
+  function resetCount(){
+    //Targets the counter id
+    const counter = document.getElementById("counter");
+    //Resets count to 0;
+    count = 0;
+    //Updates count in the HTML page
+    counter.innerHTML = count;
+  }
 </script>
 <script>
 /*Function to test features*/
@@ -210,6 +251,7 @@ function test(){
             <li class = "link"><a href="#Operators" style="color: white">Operators</a></li>
             <li class = "link"><a href="#Conditional" style="color: white">Conditional Statements</a></li>
             <li class = "link"><a href="#Comparison" style="color: white">Comparison Operators</a></li>
+            <li class = "link"><a href="#Counter" style="color: white">Counter</a></li>
             <li class = "link"><a href="#Stopwatch" style="color: white">Stopwatch</a></li>
         </ul>
     </nav>
@@ -220,7 +262,9 @@ function test(){
   <div class="flexbox">
     <div class="flexbox" style="text-align: center;">
       <h1 style="font-size: 5vw">JavaScript Tutorial</h1>
-      <br><br><br><br><br><br><br><br><br><br><br>
+      <h6 style="padding-top: 18%;">by Vince Vagay</h6>
+      <br><br><br><br><br><br>
+      
       <!--Reference https://www.w3schools.com/js/js_variables.asp-->
       <img id="Variables" src="Images/Vince/JavaScript Variables.png">
       <h4>Variables</h4>
@@ -292,6 +336,24 @@ x **= y		x to the power of y
       <p>Use comparison operators in conjunction with conditional statements</p>
   </div>
 
+  <div id="Counter" style="padding-left: 31%; font-size:1.5vw;text-align:left; margin-top: -0.5%;">
+    <!--Reference https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak-->
+    <h2 style="margin-left: -55%;">Counter</h2>
+    
+  <div style="margin-left: -3%; padding-right: 50%">
+    <div class="counter" style="margin-left: -8%;" id="counter">
+      0
+    </div>
+    <button class="Vbtn" onclick="add()" style="width:50%">+</button><button class="Vbtn" onclick="sub()" style="width:50%">-</button>
+    <button class="Vbtn" onclick="resetCount()">Reset</button>
+    
+    <h1 style="padding-left: 13%;" >How it's done</h1>
+    <a href="https://ray.so/?title=HTML&theme=raindrop&spacing=16&background=true&darkMode=true&code=PGRpdiBpZD0iY291bnRlciI-CiAgMAo8L2Rpdj4KPGJ1dHRvbiBvbmNsaWNrPSJhZGQoKSI-KzwvYnV0dG9uPgo8YnV0dG9uIG9uY2xpY2s9InN1YigpIj4tPC9idXR0b24-CjxidXR0b24gb25jbGljaz0icmVzZXRDb3VudCgpIj5SZXNldDwvYnV0dG9uPg&language=xml" style="display: flex; justify-content: center;">
+      <img src="Images/Vince/HTML Buttons All2.png" style="width: 230%;"></a>
+    <a href="https://ray.so/?title=JavaScript+Counter&theme=raindrop&spacing=16&background=true&darkMode=true&code=PHNjcmlwdD4KLy9EZWNsYXJlIHZhcmlhYmxlcwpsZXQgY291bnQgPSAwOwovL0Z1bmN0aW9uIHRoYXQgYWRkcyBvbmUgdG8gdGhlIGNvdW50ZXIKICBmdW5jdGlvbiBhZGQoKXsKICAgIC8vQ29udmVydHMgdGhlIGN1cnJlbnQgY291bnQgdG8gaW50ZWdlcgogICAgY291bnQgPSBwYXJzZUludChjb3VudCk7CiAgICAvL0FkZHMgb25lIHRvIHRoZSBjb3VudAogICAgY291bnQgKz0gMTsKICAgIC8vVXBkYXRlcyBjb3VudCBpbiB0aGUgSFRNTCBwYWdlCiAgICBjb3VudGVyLmlubmVySFRNTCA9IGNvdW50OwogIH0KLy9GdW5jdGlvbiB0aGF0IHN1YnRyYWN0cyBvbmUgZnJvbSB0aGUgY291bnRlcgovL09ubHkgaWYgdGhlIGNvdW50ZXIgaXMgbW9yZSB0aGFuIDEKICBmdW5jdGlvbiBzdWIoKXsKICAgIC8vQ29udmVydHMgdGhlIGN1cnJlbnQgY291bnQgdG8gaW50ZWdlcgogICAgY291bnQgPSBwYXJzZUludChjb3VudCk7CiAgICAvL0lmIHRoZSBjb3VudCBpcyBtb3JlIHRoYW4gMAogICAgaWYoY291bnQgPiAwKXsKICAgICAgLy9TdWJ0cmFjdCBvbmUgZnJvbSB0aGUgY291bnQKICAgICAgY291bnQgLT0gMTsKICAgIH0KICAgIC8vVXBkYXRlcyBjb3VudCBpbiB0aGUgSFRNTCBwYWdlCiAgICBjb3VudGVyLmlubmVySFRNTCA9IGNvdW50OwogIH0KLy9GdW5jdGlvbiB0aGF0IHJlc2V0cyB0aGUgY291bnRlciB0byAwCiAgZnVuY3Rpb24gcmVzZXRDb3VudCgpewogICAgLy9UYXJnZXRzIHRoZSBjb3VudGVyIGlkCiAgICBjb25zdCBjb3VudGVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImNvdW50ZXIiKTsKICAgIC8vUmVzZXRzIGNvdW50IHRvIDA7CiAgICBjb3VudCA9IDA7CiAgICAvL1VwZGF0ZXMgY291bnQgaW4gdGhlIEhUTUwgcGFnZQogICAgY291bnRlci5pbm5lckhUTUwgPSBjb3VudDsKICB9Cjwvc2NyaXB0Pg&language=javascript" style="display: flex; justify-content: center;">
+      <img src="Images/Vince/JavaScript Counter.png" style="width: 230%;"></a>
+  </div>
+  </div>
 
   <!--Header is centred with a large font size-->
   <div id="Stopwatch" style="padding-left: 31%; font-size:1.5vw;text-align:left; margin-top: -0.5%;">
@@ -311,9 +373,9 @@ x **= y		x to the power of y
       <h1 style="text-decoration: none; padding-left: 4%;">How it's done</h1></a>
   </div>
     <div style="margin-top: -6%;">
-      <a href="https://ray.so/?title=HTML+Buttons&theme=raindrop&spacing=16&background=true&darkMode=true&code=PGJ1dHRvbiBvbmNsaWNrPSJzdGFydFRpbWVyKCkiPlN0YXJ0PC9idXR0b24-CjxidXR0b24gb25jbGljaz0ic3RvcFRpbWVyKCkiPlN0b3A8L2J1dHRvbj4KPGJ1dHRvbiBvbmNsaWNrPSJyZXNldFRpbWVyKCkiPlJlc2V0PC9idXR0b24-&language=javascript" style="display: flex; justify-content: center;">
+      <a href="https://ray.so/?title=HTML&theme=raindrop&spacing=16&background=true&darkMode=true&code=PGRpdiBpZD0ic3RvcHdhdGNoIj4KICAgICAgMDA6MDA6MDAuMDAKPC9kaXY-CjxkaXY-CiAgPGJ1dHRvbiBvbmNsaWNrPSJzdGFydFRpbWVyKCkiPlN0YXJ0PC9idXR0b24-CiAgPGJ1dHRvbiBvbmNsaWNrPSJzdG9wVGltZXIoKSI-U3RvcDwvYnV0dG9uPgogIDxidXR0b24gb25jbGljaz0icmVzZXRUaW1lcigpIj5SZXNldDwvYnV0dG9uPgo8L2Rpdj4&language=xml" style="display: flex; justify-content: center;">
       <img src="Images/Vince/HTML Buttons All.png" style="width: 80%;"></a>
-      <a href="https://ray.so/?title=JavaScript+Stopwatch&theme=raindrop&spacing=16&background=true&darkMode=true&code=PHNjcmlwdD4KLy9EZWNsYXJlIFZhcmlhYmxlcwoKLy9TZXRzIHRpbWVyIHZhcmlhYmxlIHRvIHRoZSBzcGVjaWZpZWQgSUQgaW4gdGhlIEhUTUwgZG9jdW1lbnQKbGV0IHRpbWVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N0b3B3YXRjaCcpOwoKLy9EZWNsYXJpbmcgdmFyaWFibGVzIHN1Y2ggYXMgaG91cnMsIG1pbnV0ZXMsIHNlY29uZHMgYW5kIG1pbGxpc2Vjb25kcwpsZXQgaHIgPSAwOwpsZXQgbWluID0gMDsKbGV0IHNlYyA9IDA7CmxldCBtcyA9IDA7Ci8vQm9vbGVhbiB2YXJpYWJsZSB0byBrZWVwIHRyYWNrIG9mIGlmIHRoZSB0aW1lciBpcyBhY3RpdmUgb3Igbm90CmxldCBzdG9wdGltZSA9IHRydWU7CgovL0Z1bmN0aW9uIHRoYXQgc3RhcnRzIHRoZSB0aW1lcgpmdW5jdGlvbiBzdGFydFRpbWVyKCkgewogIC8vSWYgdGhlIHRpbWVyIGlzIHN0b3BwZWQsIHN0YXJ0IHRoZSB0aW1lciBhbmQgY2FsbCB0aGUgdGltZXIgZnVuY3Rpb24KICBpZiAoc3RvcHRpbWUgPT0gdHJ1ZSkgewogICAgICAgIHN0b3B0aW1lID0gZmFsc2U7CiAgICAgICAgdGltZXJDeWNsZSgpOwogICAgfQp9Ci8vRnVuY3Rpb24gdGhhdCBzdG9wcyB0aGUgdGltZXIKZnVuY3Rpb24gc3RvcFRpbWVyKCkgewogIC8vSWYgdGhlIHRpbWVyIGlzIGdvaW5nLCBzdG9wIGl0CiAgaWYgKHN0b3B0aW1lID09IGZhbHNlKSB7CiAgICBzdG9wdGltZSA9IHRydWU7CiAgfQp9Ci8vRnVuY3Rpb24gdGhhdCByZXNldHMgdGhlIHRpbWVyCmZ1bmN0aW9uIHJlc2V0VGltZXIoKSB7CiAgICAvL1RhcmdldHMgdGhlIHN0b3B3YXRjaCBpZCBpbiB0aGUgSFRNTAogICAgY29uc3Qgc3RvcHdhdGNoID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInN0b3B3YXRjaCIpOwogICAgLy9TZXRzIHRoZSB0ZXh0IHRvIGRpc3BsYXkgYWxsIHplcm9zCiAgICBzdG9wd2F0Y2guaW5uZXJIVE1MID0gJzAwOjAwOjAwLjAwJzsKICAgIC8vU2V0cyBib29sZWFuIHZhcmlhYmxlIHRvIHNheSB0aGF0IHRoZSB0aW1lciBpcyBzdG9wcGVkCiAgICBzdG9wdGltZSA9IHRydWU7CiAgICAvL1Jlc2V0cyBhbGwgY291bnRpbmcgdmFyaWFibGVzCiAgICBociA9IDA7CiAgICBzZWMgPSAwOwogICAgbWluID0gMDsKICAgIG1zID0gMDsKfQoKLy9GdW5jdGlvbiB0aGF0IGlzIHRoZSB0aW1lcgpmdW5jdGlvbiB0aW1lckN5Y2xlKCkgewogICAgLy9JZiB0aGUgdGltZXIgaXMgZ29pbmcgcmVmcmVzaCB0aGUgdmFyaWFibGVzCiAgICAvL0l0IHBhcnNlcy9jb252ZXJ0cyB0aGUgY3VycmVudCB0aW1lciBpbnRvIHRoZSB2YXJpYWJsZXMKICAgIGlmIChzdG9wdGltZSA9PSBmYWxzZSkgewogICAgc2VjID0gcGFyc2VJbnQoc2VjKTsKICAgIG1pbiA9IHBhcnNlSW50KG1pbik7CiAgICBociA9IHBhcnNlSW50KGhyKTsKCiAgICAvL0luY3JlbWVudCB0aGUgbXMgdmFyaWFibGUgYnkgMQogICAgbXMgKz0gMTsKICAgIAogICAgLy9PbmNlIHRoZSBtaWxsaXNlY29uZHMgdmFyaWFibGUgaGl0cyAxMDAsCiAgICAvL0FkZCAxIHRvIHRoZSBzZWNvbmRzIHZhcmlhYmxlCiAgICAvL1Jlc2V0cyBtaWxsaXNlY29uZHMgdmFyaWFibGUKICAgIGlmKG1zID09IDEwMCl7CiAgICAgIHNlYyArPSAxOwogICAgICBtcyA9IDA7CiAgICB9CiAgICAvL09uY2UgdGhlIHNlY29uZHMgdmFyaWFibGUgaGl0cyA2MCwKICAgIC8vQWRkIDEgdG8gdGhlIG1pbnV0ZXMgdmFyaWFibGUKICAgIC8vUmVzZXRzIHNlY29uZHMgYW5kIG1pbGxpc2Vjb25kcyB2YXJpYWJsZQogICAgaWYgKHNlYyA9PSA2MCkgewogICAgICBtaW4gKz0gMTsKICAgICAgc2VjID0gMDsKICAgICAgbXMgPSAwOwogICAgfQogICAgLy9PbmNlIHRoZSBtaW51dGVzIHZhcmlhYmxlIGhpdHMgNjAsCiAgICAvL0FkZCAxIHRvIHRoZSBob3VycyB2YXJpYWJsZQogICAgLy9SZXNldHMgbWludXRlcywgc2Vjb25kcyBhbmQgbWlsbGlzZWNvbmRzIHZhcmlhYmxlCiAgICBpZiAobWluID09IDYwKSB7CiAgICAgIGhyICs9IDE7CiAgICAgIG1pbiA9IDA7CiAgICAgIHNlYyA9IDA7CiAgICAgIG1zID0gMDsKICAgIH0KICAgIAogICAgLy9Gb3IgdmlzdWFscywgYWRkcyBhIDAgdG8gdGhlIHN0YXJ0IG9mIHRoZSB2YXJpYWJsZSBpZiBpdCdzIGJlbG93IDEwCiAgICBpZiAoc2VjIDwgMTAgfHwgc2VjID09IDApIHsKICAgICAgc2VjID0gJzAnICsgc2VjOwogICAgfQogICAgaWYgKG1pbiA8IDEwIHx8IG1pbiA9PSAwKSB7CiAgICAgIG1pbiA9ICcwJyArIG1pbjsKICAgIH0KICAgIGlmIChociA8IDEwIHx8IGhyID09IDApIHsKICAgICAgaHIgPSAnMCcgKyBocjsKICAgIH0KCiAgICAvL3RpbWVyIHZhcmlhYmxlIGRpc3BsYXlzIG5ldyB0aW1lCiAgICB0aW1lciA9IGhyICsgJzonICsgbWluICsgJzonICsgc2VjICsgJy4nICsgbXM7CiAgICAvL1RoaXMgbWFrZXMgdGhpcyBmdW5jdGlvbiBzbGVlcCBmb3IgYSBzZXQgYW1vdW50IGlmIHRpbWUKICAgIHNldFRpbWVvdXQoInRpbWVyQ3ljbGUoKSIsIDEwKTsKCiAgICAvL1JlZnJlc2hlcyB0aGUgc3RvcHdhdGNoIHRvIGRpc3BsYXkgdGhlIG5ldyB0aW1lCiAgICBjb25zdCBzdG9wd2F0Y2ggPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgic3RvcHdhdGNoIik7CiAgICBzdG9wd2F0Y2guaW5uZXJIVE1MID0gdGltZXI7CgogICAgLy9UaGlzIGZ1bmN0aW9uIHJlcGVhdHMgdmVyeSBxdWlja2x5CiAgfQp9Cjwvc2NyaXB0Pg&language=javascript" style="display: flex; justify-content: center;">
+      <a href="https://ray.so/?title=JavaScript+Stopwatch&theme=raindrop&spacing=16&background=true&darkMode=true&code=PHNjcmlwdD4KLy9EZWNsYXJlIFZhcmlhYmxlcwoKLy9TZXRzIHRpbWVyIHZhcmlhYmxlIHRvIHRoZSBzcGVjaWZpZWQgSUQgaW4gdGhlIEhUTUwgZG9jdW1lbnQKbGV0IHRpbWVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3N0b3B3YXRjaCcpOwoKLy9EZWNsYXJpbmcgdmFyaWFibGVzIHN1Y2ggYXMgaG91cnMsIG1pbnV0ZXMsIHNlY29uZHMgYW5kIG1pbGxpc2Vjb25kcwpsZXQgaHIgPSAwOwpsZXQgbWluID0gMDsKbGV0IHNlYyA9IDA7CmxldCBtcyA9IDA7Ci8vQm9vbGVhbiB2YXJpYWJsZSB0byBrZWVwIHRyYWNrIG9mIGlmIHRoZSB0aW1lciBpcyBhY3RpdmUgb3Igbm90CmxldCBzdG9wdGltZSA9IHRydWU7CgovL0Z1bmN0aW9uIHRoYXQgc3RhcnRzIHRoZSB0aW1lcgpmdW5jdGlvbiBzdGFydFRpbWVyKCkgewogIC8vSWYgdGhlIHRpbWVyIGlzIHN0b3BwZWQsIHN0YXJ0IHRoZSB0aW1lciBhbmQgY2FsbCB0aGUgdGltZXIgZnVuY3Rpb24KICBpZiAoc3RvcHRpbWUgPT0gdHJ1ZSkgewogICAgICAgIHN0b3B0aW1lID0gZmFsc2U7CiAgICAgICAgdGltZXJDeWNsZSgpOwogICAgfQp9Ci8vRnVuY3Rpb24gdGhhdCBzdG9wcyB0aGUgdGltZXIKZnVuY3Rpb24gc3RvcFRpbWVyKCkgewogIC8vSWYgdGhlIHRpbWVyIGlzIGdvaW5nLCBzdG9wIGl0CiAgaWYgKHN0b3B0aW1lID09IGZhbHNlKSB7CiAgICBzdG9wdGltZSA9IHRydWU7CiAgfQp9Ci8vRnVuY3Rpb24gdGhhdCByZXNldHMgdGhlIHRpbWVyCmZ1bmN0aW9uIHJlc2V0VGltZXIoKSB7CiAgICAvL1RhcmdldHMgdGhlIHN0b3B3YXRjaCBpZCBpbiB0aGUgSFRNTAogICAgY29uc3Qgc3RvcHdhdGNoID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInN0b3B3YXRjaCIpOwogICAgLy9TZXRzIHRoZSB0ZXh0IHRvIGRpc3BsYXkgYWxsIHplcm9zCiAgICBzdG9wd2F0Y2guaW5uZXJIVE1MID0gJzAwOjAwOjAwLjAwJzsKICAgIC8vU2V0cyBib29sZWFuIHZhcmlhYmxlIHRvIHNheSB0aGF0IHRoZSB0aW1lciBpcyBzdG9wcGVkCiAgICBzdG9wdGltZSA9IHRydWU7CiAgICAvL1Jlc2V0cyBhbGwgY291bnRpbmcgdmFyaWFibGVzCiAgICBociA9IDA7CiAgICBzZWMgPSAwOwogICAgbWluID0gMDsKICAgIG1zID0gMDsKfQoKLy9GdW5jdGlvbiB0aGF0IGlzIHRoZSB0aW1lcgpmdW5jdGlvbiB0aW1lckN5Y2xlKCkgewogICAgLy9JZiB0aGUgdGltZXIgaXMgZ29pbmcgcmVmcmVzaCB0aGUgdmFyaWFibGVzCiAgICAvL0l0IHBhcnNlcy9jb252ZXJ0cyB0aGUgY3VycmVudCB0aW1lciBpbnRvIHRoZSB2YXJpYWJsZXMKICAgIGlmIChzdG9wdGltZSA9PSBmYWxzZSkgewogICAgc2VjID0gcGFyc2VJbnQoc2VjKTsKICAgIG1pbiA9IHBhcnNlSW50KG1pbik7CiAgICBociA9IHBhcnNlSW50KGhyKTsKCiAgICAvL0luY3JlbWVudCB0aGUgbXMgdmFyaWFibGUgYnkgMQogICAgbXMgKz0gMTsKICAgIAogICAgLy9PbmNlIHRoZSBtaWxsaXNlY29uZHMgdmFyaWFibGUgaGl0cyAxMDAsCiAgICAvL0FkZCAxIHRvIHRoZSBzZWNvbmRzIHZhcmlhYmxlCiAgICAvL1Jlc2V0cyBtaWxsaXNlY29uZHMgdmFyaWFibGUKICAgIGlmKG1zID09IDEwMCl7CiAgICAgIHNlYyArPSAxOwogICAgICBtcyA9IDA7CiAgICB9CiAgICAvL09uY2UgdGhlIHNlY29uZHMgdmFyaWFibGUgaGl0cyA2MCwKICAgIC8vQWRkIDEgdG8gdGhlIG1pbnV0ZXMgdmFyaWFibGUKICAgIC8vUmVzZXRzIHNlY29uZHMgYW5kIG1pbGxpc2Vjb25kcyB2YXJpYWJsZQogICAgaWYgKHNlYyA9PSA2MCkgewogICAgICBtaW4gKz0gMTsKICAgICAgc2VjID0gMDsKICAgICAgbXMgPSAwOwogICAgfQogICAgLy9PbmNlIHRoZSBtaW51dGVzIHZhcmlhYmxlIGhpdHMgNjAsCiAgICAvL0FkZCAxIHRvIHRoZSBob3VycyB2YXJpYWJsZQogICAgLy9SZXNldHMgbWludXRlcywgc2Vjb25kcyBhbmQgbWlsbGlzZWNvbmRzIHZhcmlhYmxlCiAgICBpZiAobWluID09IDYwKSB7CiAgICAgIGhyICs9IDE7CiAgICAgIG1pbiA9IDA7CiAgICAgIHNlYyA9IDA7CiAgICAgIG1zID0gMDsKICAgIH0KICAgIAogICAgLy9Gb3IgdmlzdWFscywgYWRkcyBhIDAgdG8gdGhlIHN0YXJ0IG9mIHRoZSB2YXJpYWJsZSBpZiBpdCdzIGJlbG93IDEwCiAgICBpZiAoc2VjIDwgMTAgfHwgc2VjID09IDApIHsKICAgICAgc2VjID0gJzAnICsgc2VjOwogICAgfQogICAgaWYgKG1pbiA8IDEwIHx8IG1pbiA9PSAwKSB7CiAgICAgIG1pbiA9ICcwJyArIG1pbjsKICAgIH0KICAgIGlmIChociA8IDEwIHx8IGhyID09IDApIHsKICAgICAgaHIgPSAnMCcgKyBocjsKICAgIH0KCiAgICAvL3RpbWVyIHZhcmlhYmxlIGRpc3BsYXlzIG5ldyB0aW1lCiAgICB0aW1lciA9IGhyICsgJzonICsgbWluICsgJzonICsgc2VjICsgJy4nICsgbXM7CiAgICAvL1RoaXMgbWFrZXMgdGhpcyBmdW5jdGlvbiBzbGVlcCBmb3IgYSBzZXQgYW1vdW50IG9mIHRpbWUKICAgIHNldFRpbWVvdXQoInRpbWVyQ3ljbGUoKSIsIDEwKTsKCiAgICAvL1JlZnJlc2hlcyB0aGUgc3RvcHdhdGNoIHRvIGRpc3BsYXkgdGhlIG5ldyB0aW1lCiAgICBjb25zdCBzdG9wd2F0Y2ggPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgic3RvcHdhdGNoIik7CiAgICBzdG9wd2F0Y2guaW5uZXJIVE1MID0gdGltZXI7CgogICAgLy9UaGlzIGZ1bmN0aW9uIHJlcGVhdHMgdmVyeSBxdWlja2x5CiAgfQp9Cjwvc2NyaXB0Pg&language=javascript" style="display: flex; justify-content: center;">
       <img src="Images/Vince/JavaScript Stopwatch.png" style="width: 80%;"></a>
     </div>
   </div>
