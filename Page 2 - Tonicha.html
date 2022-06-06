@@ -30,6 +30,9 @@ a {
 img:not(.nav-logo) {
   width: 100%;
   display: block;
+  border-radius: 15px;
+  width: 70%;
+  margin-left: 15%;
 }
 
 h1,
@@ -129,8 +132,8 @@ p {
 }
 .supername {
  
- height: 500px;
- width: 600px;
+ height: 20vw;
+ width: 30vw;
  border: 7px solid black;
  border-radius: 5px;
  padding: 5px;
@@ -139,7 +142,7 @@ p {
 
 </style>
 <!--Header contains logo and title-->
-<header id="header" class="header">
+<header id="header" class="header" style="width: 99.8%">
     <div class="flexbox wrapper" style="margin-top: -10px; margin-right: -8px; margin-left: -8px;">
         <h1 style="font-family: Verdana;font-size:3vw; color: white;">JavaScript <br> Showcase</h1>
     </div>
@@ -151,7 +154,7 @@ p {
 </div> 
 <!--Navigation starts here-->
 <!--Links to parts of website-->
-<div class="nav" id="nav">
+<div class="nav" id="nav" style="width: 100.6%">
   <div style="text-align: center; background-color: #0f172a; font-family: 'Roboto'; font-size: 2vw;">
     <a class = "nav" href="Page 1 - Vince.html" style="color: white;">Vince | </a> 
     <a class = "nav" href="Page 2 - Tonicha.html" style="color: white;">| Tonicha</a> 
@@ -179,17 +182,27 @@ p {
     <!--Header is centred with a large font size-->
     <div id="" style="font-size:1.5vw;text-align:left; display:flex; justify-content: center;">
         <!--YOUR CONTENT GOES HERE-->
-        
+      <h4 style="all:unset; font-size: 5vw; padding-top: 10%; padding-left: 5%;">JavaScript Tutorial</h4>
+      <div><h6 style="padding-top: 170%; margin-left: -310%;">by Tonicha Alves</h6></div>
+      <h4 style="all: unset; padding: 5% 15% 5% 15%; text-align: center;">This website is a showcase of Javascript examples and content to help you learn the Javascript language. The code is provided, with explanations, to help you better understand the content. </h4>
+      <div style="width: 92%">
+        <h2 style="text-align: center;">Background Colour Change</h2>
           <div class="screen">
-            <h2 style="font-size: 3vw; display: flow-root;">background color : <span class="color">#f1f5f8</span></h2>
+            <h2 style="font-size: 3vw; display: flow-root; padding-bottom: 10%; text-align: center;">background color : <span class="color">#f1f5f8</span></h2>
             <!--here we are calling the class t-btn which has the style and then create an ID so the javascript can recognise the element.-->
-            <button class="tbtn tbtn-hero" id="tbtn" >click me</button>
+            <button class="tbtn tbtn-hero" id="tbtn">click me</button>
             <br>
         </div>
-     
-    
-    
+        <h5 style="text-align: center; font-size: 4vw;" >How it's done</h5>
+        <a href="https://ray.so/?title=HTML+Button&theme=raindrop&spacing=32&background=true&darkMode=true&code=PGJ1dHRvbiBpZD0idGJ0biIgPmNsaWNrIG1lPC9idXR0b24-&language=xml">
+          <img src="Images/Tonicha/HTML Button 2.png">
+        </a>
+        <a href="https://ray.so/?title=Colour+Change+Project&theme=raindrop&spacing=32&background=true&darkMode=true&code=CiAvKkhlcmUgd2Ugd2lsbCBkZWNsYXIgc29tZSBjb25zdGFudCB2YWx1ZXMgdGhhdCB3ZSB3aWxsIHVzZSBpbiBvdXIgZnVuY3Rpb24gYW5kIGJ1dHRvbiAqLwoKY29uc3QgY29sb3JzID0gWyJncmVlbiIsICJyZWQiLCAiYmx1ZSIsICJyZ2IoMTk4LCAxMDEsIDExOCkiLCAiZ29sZCIsICJvcmFuZ2UiLCAicHVycGxlIl07CmNvbnN0IHRidG4gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgidGJ0biIpOwpjb25zdCBzY3JlZW5jb2xvciA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoIi5jb2xvciIpOwoKIC8qdGhlIGJ1dHRvbiB3aWxsIGJlIHJldHJpZXZlZCBieSB0aGUgJ2dldEVsZW1lbnRCeUlkJyBjYWxsIHdlIHRoZW4gZGVmaW5lIHRoYXQgYnkgY2xpY2tpbmcgdGhlIGJ1dHRvbiB0aGUgZnVuY3Rpb24gd2lsbCBiZSBjYWxsZWQgKi8KCiB0YnRuLmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwgZnVuY3Rpb24gKCkgewogICAKICAvKndlIHNwZWNpZnkgdGhhdCB0aGUgY2xhc3MgInNjcmVlbiIgaXMgdGhlIGVsZW1lbnQgdGhhdCB3aWxsIGJlIGVmZmVjdGVkIHRoZSAnY29uc3QgPSByYW5kb21OdW1iZXInIHdpbGwgY2FsbCB0aGUgZnVuY3Rpb24gKi8KICAKICB2YXIgZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoIi5zY3JlZW4iKTsKICBjb25zdCByYW5kb21OdW1iZXIgPSBnZXRSYW5kb21OdW1iZXIoKTsKIAogIC8qaGVyZSB3ZSBhc2sgdGhhdCB0aGUgJ3NjcmVlbicgYmFja2dyb3VuZCBjb2xvciB3aWxsIHJ1biB0aHJvdWdoIHRoZSBhcnJheSAnY29sb3JzJyBhbmQgbGFuZCBvbiBhIHJhbmRvbSBjb2xvci4gCiAgV2UgYXNrIHRoYXQgdGhlIHN0eWxlIG9mIHRoZSAnY29sb3JzJyBpbiB0aGUgYXJyYXkgYmUgY2hvc2VuIGUuZy4gY29sb3IgJ2JsdWUnIHNob3dzIG9uIHNjcmVlbiBub3QgdGhlIHdvcmQgYmx1ZS4gKi8KICAKICBlLnN0eWxlLmJhY2tncm91bmRDb2xvciA9IGNvbG9yc1tyYW5kb21OdW1iZXJdOwogIAogIC8qdGhlIGNvcnJlc3BvbmRpbmcgbmFtZSBmb3IgdGhhdCBjb2xvciB3aWxsIGFsc28gY2hhbmdlIGlmIHdlIHVzZSB0aGlzIHRoZSBzdGF0ZW1lbnQgYmVsb3cuIAogIEhlcmUgd2UgYXNrIHRoZSAnc2NyZWVuQ29sb3InIGFsc28gY2hhbmdlcyB3aGVuIHRoZSAncmFuZG9tQ29sb3InIGlzIGNoYW5nZWQuCiAgV2UgdXNlICd0ZXh0Y29udGVudCcgdG8gZGVmaW5lIHRoYXQgaXQgaXMgdGhlICduYW1lJyBvZiB0aGUgY29sb3Igd2Ugd2FudCBmcm9tIHRoZSBhcnJheSwKICBlLmcuIHRoZSB3b3JkICdibHVlJyBzaG93cyByYXRoZXIgdGhhbiB0aGUgY29sb3IuKi8KICAKICBzY3JlZW5jb2xvci50ZXh0Q29udGVudCA9IGNvbG9yc1tyYW5kb21OdW1iZXJdOwp9KTsKCi8qV2Ugd2lsbCBtYWtlIGEgZnVuY3Rpb24gYW5kIGNhbGwgaXQgZ2V0UmFuZG9tTnVtYmVyLCAKaW5zaWRlIGl0IHdpbGwgd29yayB0aHJvdWdoIHRoZSBhcnJheSBhYm92ZSBjYWxsZWQgY29sb3JzIGFuZCBwaWNrIGEgcmFuZG9tIG51bWJlci4gClRoZSBjb2xvdXJzIGFib3ZlIGhhdmUgYWxsb2NhdGVkIG51bWJlcnMgc3RhcnRpbmcgZnJvbSAwIHRvIDYgCihiZWNhdXNlIGNvbXB1dGVyIHN0YXJ0IGNvdW50aW5nIGZyb20gemVybyBub3Qgb25lKS4gKi8KCmZ1bmN0aW9uIGdldFJhbmRvbU51bWJlcigpIHsKICByZXR1cm4gTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogY29sb3JzLmxlbmd0aCk7Cn0KCgoKLypUaGlzIG5leHQgZnVuY3Rpb24gd2lsbCBtYW5hZ2Ugb3VyIGlucHV0IG91dHB1dCBwcm9qZWN0IHdlIHdpbGwgY2FsbCBpdCBzdXBlcmhlcm9uYW1lKi8KCmZ1bmN0aW9uIHN1cGVyaGVyb25hbWUoKSB7CiAgCiAgLypIZXJlIHdlIGRlZmluZSB3aGF0IGVsZW1lbnRzIG9uIHRoZSBwYWdlIHdlIHdpbGwgdGFyZ2V0IGFuZCBjcmVhdGUgYSB2YXJpYWJsZSBmb3IgdGhlbS4KICBCeSBhc2tpbmcgZm9yIC52YWx1ZSB3ZSB0YWtlIHdoYXQgdGhlIHVzZXIgaGFzIGlucHV0IHRvIHRoZSBlbGVtZW50IChib3ggb24gc2NyZWVuIGZvciB0eXBpbmcpKi8KICAKICAgIHZhciBpbnB1dDEgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZmlyc3RJbnB1dCIpLnZhbHVlOwogICAgdmFyIGlucHV0MiA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJzZWNvbmRJbnB1dCIpLnZhbHVlOwoKICAKICAvKmhlcmUgd2Ugc2ltcGx5IHBsdXMgdGhlIHR3byB2YXJpYWJsZXMgdG9nZXRoZXIgdG8gZm9ybSB0aGUgb3V0cHV0Ki8KICAgIAogIHZhciBvdXRwdXQgPSBpbnB1dDEgKyBpbnB1dDI7CgogIC8qSGVyZSB3ZSBhc2sgPiBPbiBkb2N1bWVudCByZXRyaWV2ZSBlbGVtZW50IG5hbWVkICdoZXJvbmFtZScgYW5kIHN1bWJpdCBvdXRwdXQgZnJvbSBlcXVhdGlvbgogICAndmFyIG91dHB1dCA9IGZpcnN0aW5wdXQgKyBzZWNvbmRpbnB1dCcgKi8gIAogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJoZXJvbmFtZSIpLmlubmVySFRNTCA9IG91dHB1dDsKCgp9&language=javascript">
+          <img src="Images/Tonicha/JavaScript Colour Change.png">
+        </a>
         <br>
+        <h2 style="text-align: center;">Superhero Name</h2>
+        <div style="padding-left: 27%; text-align: center;">
         <div class="supername" style="font-size: 1.5vw;">
           <div>
           <label for="firstInput">Enter your favourite Colour:</label><br>
@@ -204,10 +217,17 @@ p {
 
             </div>
           </div>
-        
+        </div>
+        <h5 style="text-align: center; font-size: 4vw;" >How it's done</h5>
+        <a href="https://ray.so/?title=HTML+Button&theme=raindrop&spacing=32&background=true&darkMode=true&code=PGJ1dHRvbiB0eXBlPSJidXR0b24iIG9uY2xpY2s9InN1cGVyaGVyb25hbWUoKSI-WW91ciBzdXBlcmhlcm8gbmFtZTwvYnV0dG9uPg&language=xml">
+          <img src="Images/Tonicha/HTML Button 1.png">
+        </a>
+        <a href="https://ray.so/?title=Input+Output+Project&theme=raindrop&spacing=32&background=true&darkMode=true&code=ZnVuY3Rpb24gc3VwZXJoZXJvbmFtZSgpIHsKICAgIHZhciBpbnB1dDEgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZmlyc3RJbnB1dCIpLnZhbHVlOwogICAgdmFyIGlucHV0MiA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJzZWNvbmRJbnB1dCIpLnZhbHVlOwogICAJdmFyIG91dHB1dCA9IGlucHV0MSArIGlucHV0MjsKICAgCWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJoZXJvbmFtZSIpLmlubmVySFRNTCA9IG91dHB1dDsKfQo&language=javascript">
+          <img src="Images/Tonicha/JavaScript Input Output Project.png">
+        </a>
+        </div>
       </div>
     </div>
-  </div>
 
 <!-- javascript -->
 <script src="myjs.js"></script>
